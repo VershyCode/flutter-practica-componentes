@@ -12,6 +12,8 @@ class CardPage extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           _cardtipo1(),
+          SizedBox(height: 30.0), // Creamos un espacio entre las tarjetas
+          _cardtipo2(),
         ],
         padding: EdgeInsets.all(10.0),
       ),
@@ -48,4 +50,25 @@ class CardPage extends StatelessWidget {
       ),
     );
   }
+
+ Widget _cardtipo2() {
+   return Card(
+     child: Column(
+       children: <Widget>[
+         FadeInImage(
+           placeholder: AssetImage('assets/jar-loading.gif'),
+           image: NetworkImage('https://static.vecteezy.com/system/resources/thumbnails/000/246/312/original/mountain-lake-sunset-landscape-first-person-view.jpg'),
+           height: 300.0,
+           fit: BoxFit.fill,
+
+         ),
+         Container(
+          child: Text('No tewngoosaodssad'),
+          padding: EdgeInsets.all(10.0),
+        )
+       ],
+     )
+   );
+ }
+
 }
