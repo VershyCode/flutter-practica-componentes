@@ -26,8 +26,19 @@ class HomePageTemp extends StatelessWidget {
   }
 
   List<Widget> _crearItemsCorto(){
-    return opciones.map((e) => ListTile(
-      title: Text(e + ' test'),
+    return opciones.map((e) => Column(
+      children: <Widget>[
+        ListTile(
+          title: Text('Titulo ListTile #' + e),
+          subtitle: Text('Subtitulo del listTile'),
+          leading: Icon(Icons.accessible_forward),
+          trailing: Icon(Icons.arrow_forward),
+          onTap: (){
+            // Click event
+          },
+        ),
+        Divider()
+      ],
     )).toList();
   }
 }
