@@ -22,6 +22,8 @@ class CardPage extends StatelessWidget {
 
   Widget _cardtipo1() {
     return Card(
+      elevation: 10.0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
       child: Column(
         children: <Widget>[
           ListTile(
@@ -58,9 +60,7 @@ class CardPage extends StatelessWidget {
          FadeInImage(
            placeholder: AssetImage('assets/jar-loading.gif'),
            image: NetworkImage('https://static.vecteezy.com/system/resources/thumbnails/000/246/312/original/mountain-lake-sunset-landscape-first-person-view.jpg'),
-           height: 300.0,
            fit: BoxFit.fill,
-
          ),
          Container(
           child: Text('No tewngoosaodssad'),
