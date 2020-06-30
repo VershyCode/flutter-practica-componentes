@@ -27,16 +27,28 @@ class AlertPage extends StatelessWidget {
   void _mostrarAlert(BuildContext context){
     showDialog(
       context: context,
-      barrierDismissible: true, // Cerrar alerta con tap afuera.
+      barrierDismissible: false, // Cerrar alerta con tap afuera.
       builder: (context){
         return AlertDialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
           title: Text('Titulo de la alerta'),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Text('Contenido de la alerta'),
+              FlutterLogo(size: 100.0),
             ],
-          )
+          ),
+          actions: <Widget>[
+            FlatButton(
+              onPressed: () => Navigator.of(context).pop(), 
+              child: Text('Cancelar'),
+            ),
+            FlatButton(
+              onPressed: () => Navigator.of(context).pop(), 
+              child: Text('Ok'),
+            )
+          ],
         );
       }
     );
