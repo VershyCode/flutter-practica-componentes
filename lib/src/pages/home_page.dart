@@ -1,7 +1,6 @@
-import 'package:components/src/pages/alert_page.dart';
+import 'package:flutter/material.dart';
 import 'package:components/src/providers/menu_provider.dart';
 import 'package:components/src/utils/icon_string_util.dart';
-import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -24,7 +23,6 @@ class HomePage extends StatelessWidget {
       },
     );
   }
-
   List<Widget> _listaItems(List<dynamic> data, BuildContext context) {
     return data.map((e) => Column(
       children: <Widget>[
