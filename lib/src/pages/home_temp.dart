@@ -10,7 +10,7 @@ class HomePageTemp extends StatelessWidget {
         title: Text('Componentes temp!')
       ),
       body: ListView(
-        children: _crearItems()
+        children: _crearItemsCorto()
       ),
     );
   }
@@ -23,5 +23,11 @@ class HomePageTemp extends StatelessWidget {
       ))..add(Divider());
     });
     return list;
+  }
+
+  List<Widget> _crearItemsCorto(){
+    return opciones.map((e) => ListTile(
+      title: Text(e + ' test'),
+    )).toList();
   }
 }
