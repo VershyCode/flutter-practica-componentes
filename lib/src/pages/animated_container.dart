@@ -23,7 +23,7 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
       body: Center(
         child: AnimatedContainer(
           duration: Duration(seconds: 1), // Duracion al dibujar
-          curve: Curves.fastOutSlowIn, // Efecto
+          curve: Curves.elasticOut, // Efecto
           width: _width,
           height: _height,
           decoration: BoxDecoration(
