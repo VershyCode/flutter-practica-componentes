@@ -1,4 +1,5 @@
 import 'package:components/src/providers/menu_provider.dart';
+import 'package:components/src/utils/icon_string_util.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -28,6 +29,12 @@ class HomePage extends StatelessWidget {
       children: <Widget>[
         ListTile(
           title: Text(e['texto']),
+          subtitle: Text('Descripcion aqui'),
+          leading: getIcon(e['icon']),
+          trailing: Icon(Icons.arrow_forward_ios),
+          onTap: (){
+            // Event click
+          },
         ),
         Divider(),
       ],
