@@ -12,7 +12,9 @@ class _InputPageState extends State<InputPage> {
   String _email = '';
   String _password = '';
   String _fecha = '';
+  String _opcionSeleccionada = 'Volar';
   TextEditingController _inputFieldDateController = new TextEditingController();
+  List<String> _poderes = ['Volar', 'Rayos X', 'Super aliento','Super fuerza'];
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +32,8 @@ class _InputPageState extends State<InputPage> {
           _crearPassword(),
           Divider(),
           _crearFecha(context),
+          Divider(),
+          _crearDropdown(context),
           Divider(),
           _crearPersona()
         ],
@@ -85,7 +89,6 @@ class _InputPageState extends State<InputPage> {
       }
     );
   }
-
  Widget _crearPassword() {
    return TextField(
       obscureText: true,
@@ -138,5 +141,28 @@ class _InputPageState extends State<InputPage> {
         _inputFieldDateController.text = _fecha;
       });
     }
+  }
+
+  List<DropdownMenuItem<String>> getOpcionesDropDown(){
+    List<DropdownMenuItem<String>> lista = new List();
+    _poderes.forEach((e) {
+      lista.add(DropdownMenuItem(
+        child: Text(e),
+        value: e,
+      ));
+     });
+     return lista;
+  }
+
+  Widget _crearDropdown(BuildContext context) {
+    return DropdownButton(
+      value: _opcionSeleccionada,
+      items: getOpcionesDropDown(),
+      onChanged: (e){
+        setState(() {
+          _opcionSeleccionada = e;
+        });
+      },
+    );
   }
 }
