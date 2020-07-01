@@ -35,7 +35,8 @@ class _InputPageState extends State<InputPage> {
           Divider(),
           _crearDropdown(context),
           Divider(),
-          _crearPersona()
+          _crearPersona(),
+          Divider()
         ],
       ),
     );
@@ -62,14 +63,6 @@ class _InputPageState extends State<InputPage> {
       },
     );
   }
-
- Widget _crearPersona() {
-   return ListTile(
-     title: Text('Nombre: $_nombre'),
-     subtitle: Text('E-mail: $_email'),
-   );
- }
-
   Widget _crearEmail() {
     return TextField(
       keyboardType: TextInputType.emailAddress,
@@ -155,14 +148,33 @@ class _InputPageState extends State<InputPage> {
   }
 
   Widget _crearDropdown(BuildContext context) {
-    return DropdownButton(
-      value: _opcionSeleccionada,
-      items: getOpcionesDropDown(),
-      onChanged: (e){
-        setState(() {
-          _opcionSeleccionada = e;
-        });
-      },
-    );
+    return Row(
+      children: <Widget>[
+        Icon(Icons.select_all),
+        SizedBox(width: 30.0,),
+        Expanded(
+          child: DropdownButton(
+            value: _opcionSeleccionada,
+            items: getOpcionesDropDown(),
+            onChanged: (e){
+              setState(() {
+                _opcionSeleccionada = e;
+              });
+            },
+          ),
+        ),
+      ],
+    ); 
+    
+
   }
+
+   Widget _crearPersona() {
+   return ListTile(
+     title: Text('Nombre: $_nombre'),
+     subtitle: Text('E-mail: $_email'),
+     trailing: Text('Poder: $_opcionSeleccionada'),
+   );
+ }
+
 }
